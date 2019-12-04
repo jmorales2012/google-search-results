@@ -8,31 +8,33 @@ html  {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+     display: flex;
+     flex-direction: column;
 }
 
-/* HEADER */
+/*              HEADER FORMATTING 
+*/
 
 header {
-    display: flex;
-    margin-top: 10px;
-    padding-left: 20px;
-    flex-direction: row;
-    /* flex-wrap: ; */
+    display: grid;
+    padding: 20px;
+    grid-template-columns: 100px 50px 600px auto;
+    grid-template-rows: repeat(3, 1fr);
     align-items: center;
-    /* justify-content: space-around; */
+    /* border: 1px solid black; */
 }
 
 header img {
+    grid-column: 1;
+    grid-row: 1;
     height: 35px;
 }
 
 header input {
+    grid-column: 3;
+    grid-row: 1;
     height: 45px;
-    width: 500px;
     font-size: 13px;
-    margin-left: 30px;
     padding-left: 20px;
     border-radius: 30px;
     border: 1px solid #e2e2e2;
@@ -47,19 +49,73 @@ header input:hover {
     box-shadow: 2px 2px 5px #e5e5e5;
 }
 
-.profile-avatar {
-    width: 100px;
-    display: flex;
-    flex-direction: row;
+header .right-menu {
+    grid-column: 5;
+    grid-row: 1;
+    justify-self: end;
 }
 
-.profile-avatar a {
-    margin: 0 auto;
-    color: black;
+header .right-menu a {
     text-decoration: none;
+    color: black;
     opacity: 0.7;
 }
 
-.secondary-menu {
-    width: 100%;
+header .secondary-menu {
+    grid-column: 3;
+    grid-row: 2;
+    padding: 15px 0 14px 0;
+    border-bottom: 1px solid #ebebeb;
 }
+
+header .secondary-menu a {
+    padding: 10px 10px 12px 10px;
+    text-decoration: none;
+    color: #5f6368;
+}
+
+header .secondary-menu a:hover {
+    color: #3376e0;
+}
+
+header .secondary-menu .active {
+    color: #3376e0;
+    border-bottom: 3px solid #3376e0;
+}
+
+header .secondary-menu a:nth-child(7) {
+    margin-left: 45px;
+}
+
+header .secondary-menu a:nth-child(8):hover {
+    border: 1px solid #c6c6c6;
+    background-color: #f5f5f5;
+    color: #5f6368;
+}
+
+header .header-empty-box-left {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    padding: 22px 0;
+    margin-left: -30px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+header .header-empty-box-right {
+    grid-column: 4 / span 2;
+    grid-row: 2;
+    padding: 22px 0;
+    margin-right: -30px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+header .search-results-number {
+    grid-column: 3;
+    grid-column: 3;
+    font-size: 14px;
+    color: #74797f;
+}
+
+
+/*                  SEARCH RESULTS FORMATTING
+*/
